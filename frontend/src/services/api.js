@@ -1,7 +1,8 @@
+
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: ' https://civicpulse-api-2026.onrender.com'
+  baseURL: 'https://civicpulse-api-2026.onrender.com'
 });
 
 API.interceptors.request.use((config) => {
