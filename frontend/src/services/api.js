@@ -1,8 +1,10 @@
-
 import axios from 'axios';
 
+// We use the Vercel Environment Variable, and ensure /api is ALWAYS at the end
 const API = axios.create({
-  baseURL: 'https://civicpulse-api-2026.onrender.com'
+  baseURL: import.meta.env.VITE_API_URL 
+    ? `${import.meta.env.VITE_API_URL}/api` 
+    : 'http://localhost:5000/api'
 });
 
 API.interceptors.request.use((config) => {
